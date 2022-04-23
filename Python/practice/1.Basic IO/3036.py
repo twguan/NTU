@@ -1,0 +1,6 @@
+name = input()
+age = eval(input())
+sex = input()
+print("Name:", name, sep='')
+print("Age:", age, sep='')
+print("Gender:", sex, sep='')

@@ -1,0 +1,7 @@
+a = int(input())
+b = int(input())
+c = int(input())
+d = int(input())
+e = int(input())
+print(2*(a*c + b*c + a*b) + 8*d*(a + b + c - 6*e))
+print(a*b*c - 2*d*((a - 2*e)*(c - 2*e) + (a - 2*e)*(b - 2*e) + (b - 2*e)*(c - 2*e)))
