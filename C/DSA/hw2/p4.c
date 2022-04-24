@@ -67,13 +67,13 @@ void DFS(list *List, int *traverse, int *parent, int visit, int goal){
         while (ptr != NULL){
             next = ptr->index;
             parent[next] = visit;
-            // if (next == goal){          // find the goal
-            //     // printf("Find!");
-            //     earlystop = 1;
-            //     break;
-            // }
-            // if (earlystop)
-            //     break;
+            if (next == goal){          // find the goal
+                // printf("Find!");
+                earlystop = 1;
+                break;
+            }
+            if (earlystop)
+                break;
             if (!traverse[next]){       // haven't traverse yet
                 DFS(List, traverse, parent, next, goal);
             }
@@ -132,8 +132,10 @@ int main(){
         earlystop = 0;
         DFS(List, traverse, parent, c, S);
         // printList(List);
-        // earlystop = 0;
-        // DFS(List, traverse, parent, c, R);
+        earlystop = 0;
+        for (int i = 0; i < N+1; i++)
+            traverse[i] = 0;
+        DFS(List, traverse, parent, c, R);
         parent[c] = 0;
         int lenS, lenR;
         lenS = familyList(parent, S, pathS);
