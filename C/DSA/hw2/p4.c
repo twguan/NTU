@@ -119,22 +119,22 @@ int main(){
     for (int j = 0; j < Q; j++){
         scanf("%d", &c);
 
-        int *traverse = (int *)malloc(sizeof(int) * (N+1));
-        int *parent = (int *)malloc(sizeof(int) * (N+1));
-        int *pathS = (int *)malloc(sizeof(int) * (N+1));
-        int *pathR = (int *)malloc(sizeof(int) * (N+1));
-        for (int i = 0; i < N+1; i++){
-            parent[i] = 0;
-            traverse[i] = 0;
-            pathS[i] = 0;
-            pathR[i] = 0;
-        }
+        int *traverse = (int *)calloc(N+1, sizeof(int));
+        int *parent = (int *)calloc(N+1, sizeof(int));
+        int *pathS = (int *)calloc(N+1, sizeof(int));
+        int *pathR = (int *)calloc(N+1, sizeof(int));
+        // for (int i = 0; i < N+1; i++){
+        //     parent[i] = 0;
+        //     traverse[i] = 0;
+        //     pathS[i] = 0;
+        //     pathR[i] = 0;
+        // }
         earlystop = 0;
         DFS(List, traverse, parent, c, S);
         // printList(List);
         earlystop = 0;
-        for (int i = 0; i < N+1; i++)
-            traverse[i] = 0;
+        free(traverse);
+        traverse = (int *)calloc(N+1, sizeof(int));
         DFS(List, traverse, parent, c, R);
         parent[c] = 0;
         int lenS, lenR;
