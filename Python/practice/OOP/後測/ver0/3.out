@@ -1,0 +1,32 @@
+---Add Member---
+You can borrow at most 3 books.
+----------------
+
+---Add Member---
+You can borrow at most 7 books.
+----------------
+
+---Borrow Book---
+['Playboy']
+-----------------
+
+---Library Info---
+Calculus: Early Transcendentals 8th: 6/6
+Harry Potter and the Sorcerer¡¦s Stone: 3/3
+Playboy: 0/1
+The Old Man and the Sea: 5/5
+------------------
+
+---Borrow Book---
+['The Old Man and the Sea']
+-----------------
+
+---Borrow Book---
+You are not our member!
+-----------------
+
+---Borrow Book---
+Sorry! No enough books for you!
+-----------------
+
+Have a nice day!

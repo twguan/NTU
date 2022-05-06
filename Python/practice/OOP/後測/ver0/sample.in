@@ -1,0 +1,18 @@
+addBook
+The History of Hamberger|food history|1
+addMember
+Mark|student
+addMember
+Jessica|teacher
+borrowBook
+Mark|The History of Hamberger
+borrowBook
+Robert|The History of Hamberger
+borrowBook
+Jessica|The History of Hamberger
+returnBook
+Mark|100 tips for Python
+returnBook
+Mark|The History of Hamberger
+libraryInfo
+quit

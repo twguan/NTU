@@ -1,0 +1,22 @@
+addBook
+The Old Man and the Sea|Novel Imaginary Ocean|5
+addBook
+Harry Potter and the Sorcerer’s Stone|Novel Imaginary Realism Fantasy|3
+addBook
+Calculus: Early Transcendentals 8th|Calculus Math|6
+addBook
+Playboy|Adult Exposed|1
+addMember
+Jerry|other
+addMember
+May|student
+borrowBook
+Jerry|Playboy
+libraryInfo
+borrowBook
+May|The Old Man and the Sea
+borrowBook
+Customer|The Old Man and the Sea
+borrowBook
+May|Playboy
+quit

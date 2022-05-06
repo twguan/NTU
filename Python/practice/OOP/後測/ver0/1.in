@@ -1,0 +1,22 @@
+addBook
+The Old Man and the Sea|Novel Imaginary Ocean|5
+addBook
+Harry Potter and the Sorcerer’s Stone|Novel Imaginary Realism Fantasy|3
+addBook
+Calculus: Early Transcendentals 8th|Calculus|6
+addMember
+Andrew|student
+addMember
+Abei|other
+addMember
+TianGod|teacher
+borrowBook
+TianGod|Calculus: Early Transcendentals 8th
+borrowBook
+Andrew|The Old Man and the Sea
+borrowBook
+Abei|Harry Potter and the Sorcerer’s Stone
+libraryInfo
+findBook
+-|Novel
+quit

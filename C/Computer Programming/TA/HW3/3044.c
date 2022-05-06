@@ -17,6 +17,8 @@ int main(){
     while (1){
         char *ptr = NULL;
         fgets(line, 128, f);
+        if (line[(strlen(line)-1)] == '\r')
+            line[(strlen(line)-1)] = '\0';
         if(feof(f))
             break;
         
