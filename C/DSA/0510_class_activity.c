@@ -50,7 +50,7 @@ int find_set(const char* s) {
     int i = hash(s);
     // TODO: Implement your find algorithm here
     // Do path compression
-    if (ds[i].parent != &ds[i]){
+    if (ds[i].parent->parent != &ds[i]){
         find_set(ds[i].parent->name);
         ds[i].parent = ds[i].parent->parent;
     }
@@ -60,10 +60,12 @@ int find_set(const char* s) {
 void group(const char *ra, const char *rb) {
     int a = find_set(ra), b = find_set(rb);
     // TODO: Implement your union algorithm here
-    if (ds[a].size > ds[b].size)
+    if (ds[a].size > ds[b].size){
         ds[b].parent = &ds[a];
-    else
+    }
+    else{
         ds[a].parent = &ds[b];
+    }
 }
 
 bool same_set(const char*a, const char* b) {
