@@ -62,9 +62,11 @@ void group(const char *ra, const char *rb) {
     // TODO: Implement your union algorithm here
     if (ds[a].size > ds[b].size){
         ds[b].parent = &ds[a];
+        ds[a].size += 1;
     }
     else{
         ds[a].parent = &ds[b];
+        ds[b].size += 1;
     }
 }
 
