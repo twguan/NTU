@@ -1,0 +1,38 @@
+addBook
+asdca|bbw qqd aso|3
+addBook
+cew|qw qd aso|6
+addBook
+ppepkq|cxqw qwx wde|60
+addBook
+wmm|cxqw bbw qqd|16
+addBook
+pppo|qd qw aso qwx|7
+libraryInfo
+findBook
+ppepkq|qwx wde
+findBook
+-|qd qwx
+addMember
+jjw|student
+addMember
+ppq|teacher
+addMember
+mmme|other
+addMember
+peek|other
+borrowBook
+mmme|pppo
+borrowBook
+ppq|wmm
+borrowBook
+ppq|cew
+borrowBook
+ppq|pppo
+libraryInfo
+returnBook
+ppq|pppo
+libraryInfo
+findBook
+-|qqd qd
+quit

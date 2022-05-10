@@ -1,0 +1,73 @@
+---Library Info---
+asdca: 3/3
+cew: 6/6
+ppepkq: 60/60
+pppo: 7/7
+wmm: 16/16
+------------------
+
+---Search Result---
+Not Found!
+-------------------
+
+---Search Result---
+Not Found!
+-------------------
+
+---Add Member---
+You can borrow at most 7 books.
+----------------
+
+---Add Member---
+You can borrow at most 5 books.
+----------------
+
+---Add Member---
+You can borrow at most 3 books.
+----------------
+
+---Add Member---
+You can borrow at most 3 books.
+----------------
+
+---Borrow Book---
+['pppo']
+-----------------
+
+---Borrow Book---
+['wmm']
+-----------------
+
+---Borrow Book---
+['cew', 'wmm']
+-----------------
+
+---Borrow Book---
+['cew', 'pppo', 'wmm']
+-----------------
+
+---Library Info---
+asdca: 3/3
+cew: 5/6
+ppepkq: 60/60
+pppo: 5/7
+wmm: 15/16
+------------------
+
+---Return Book---
+['cew', 'wmm']
+-----------------
+
+---Library Info---
+asdca: 3/3
+cew: 5/6
+ppepkq: 60/60
+pppo: 6/7
+wmm: 15/16
+------------------
+
+---Search Result---
+Not Found!
+-------------------
+
+Have a nice day!

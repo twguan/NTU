@@ -1,0 +1,12 @@
+addBook
+Hunger Game 1|adventure|3
+addBook
+Introduction to Algorithms|science computer|1
+addBook
+The History of Hamburger|food history|8
+findBook
+Introduction to Algorithms|-
+findBook
+Secrets of NFT|-
+libraryInfo
+quit
