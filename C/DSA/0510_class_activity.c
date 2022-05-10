@@ -7,6 +7,7 @@ typedef struct disjointSet{
     // TODO: Determine fields to use by your method
     struct disjointSet *parent;
     char name[16];
+    int size;
 } DisjointSet;
 
 DisjointSet ds[1 << 24];
@@ -33,6 +34,7 @@ void makeset(const char* s){
     int h = hash(s);
     ds[h].parent = &ds[h];
     strcpy(ds[h].name, s);
+    ds[h].size = 1;
 }
 
 inline void static init(const char* s) {
@@ -58,7 +60,10 @@ int find_set(const char* s) {
 void group(const char *ra, const char *rb) {
     int a = find_set(ra), b = find_set(rb);
     // TODO: Implement your union algorithm here
-    ds[b].parent = &ds[a];
+    if (ds[a].size > ds[b].size)
+        ds[b].parent = &ds[a];
+    else
+        ds[a].parent = &ds[b];
 }
 
 bool same_set(const char*a, const char* b) {
