@@ -6,7 +6,7 @@
 typedef struct disjointSet{
     // TODO: Determine fields to use by your method
     struct disjointSet *parent;
-    char name[16];
+    int num;
     int size;
 } DisjointSet;
 
@@ -29,48 +29,44 @@ int hash(const char* s) {
     return ret;
 }
 
-void makeset(const char* s){
+void makeset(int h){
     // TODO: Initialize a set with hash value
-    int h = hash(s);
     ds[h].parent = &ds[h];
-    strcpy(ds[h].name, s);
+    ds[h].num = h;
     ds[h].size = 1;
 }
 
-inline void static init(const char* s) {
-    int i = hash(s);
+inline void static init(int i) {
     if (!set[i]) {
-        makeset(s);
+        makeset(i);
         set[i] = 1;
     }
 }
 
-int find_set(const char* s) {
-    init(s);
-    int i = hash(s);
+int find_set(int i) {
+    init(i);
     // TODO: Implement your find algorithm here
     // Do path compression
-    if (ds[i].parent->parent != &ds[i]){
-        find_set(ds[i].parent->name);
-        ds[i].parent = ds[i].parent->parent;
+    if (ds[i].parent != &ds[i]){
+        ds[i].parent = &ds[find_set(ds[i].parent->num)];
     }
-    return hash(ds[i].parent->name);
+    return ds[i].parent->num;
 }
 
-void group(const char *ra, const char *rb) {
+void group(int ra, int rb) {
     int a = find_set(ra), b = find_set(rb);
     // TODO: Implement your union algorithm here
-    if (ds[a].size > ds[b].size){
+    if (ds[a].size >= ds[b].size){
         ds[b].parent = &ds[a];
-        ds[a].size += 1;
+        ds[a].size += ds[b].size;
     }
     else{
         ds[a].parent = &ds[b];
-        ds[b].size += 1;
+        ds[b].size += ds[a].size;
     }
 }
 
-bool same_set(const char*a, const char* b) {
+bool same_set(int a, int b) {
     // TODO: Implement your algorithm here
     return(find_set(a) == find_set(b));
 }
@@ -82,11 +78,13 @@ int main() {
     scanf("%d", &n);
     for (int i = 0; i < n; i++){
         scanf("%s%s%s", order, student_A, student_B);
+        int a = hash(student_A);
+        int b = hash(student_B);
         if (!strcmp(order, "group")){
-            group(student_A, student_B);
+            group(a, b);
         }
         else if(!strcmp(order, "test")){
-            if(same_set(student_A, student_B))
+            if(same_set(a, b))
                 printf("Positive\n");
             else
                 printf("Negative\n");
