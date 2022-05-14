@@ -78,8 +78,8 @@ int main(){
         printf("\n");
     if (back_num <= front_num && (back_num != 0)){
         printf("%s", input);
-        for (int i = 0; i < back_num; i++)
-            printf("%c", input[len-1-i]);
+        for (int i = back_num-1; i >= 0; i--)
+            printf("%c", input[i]);
     }
     return 0;
 }
