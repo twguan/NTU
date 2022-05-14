@@ -73,8 +73,9 @@ int main(){
         for (int i = 0; i < front_num; i++)
             printf("%c", input[len-1-i]);
         printf("%s", input);
-        printf("\n");
     }
+    if (front_num == back_num)
+        printf("\n");
     if (back_num <= front_num && (back_num != 0)){
         printf("%s", input);
         for (int i = 0; i < back_num; i++)
