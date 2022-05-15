@@ -39,7 +39,7 @@ int main(){
         similar[i] = (node *)malloc(sizeof(node) * k);
 
     long long d = 0x7E - 0x21 + 1;  // d = 94
-    long long q = LLONG_MAX / d + 1;
+    long long q = LLONG_MAX / d + 1;    // q = 98120979115476339
     long long h = 1;
 
 
@@ -51,11 +51,12 @@ int main(){
             similar[j][i].key = 0;
         for (int j = 0; j < l; j++){
             long long hash_num = hash(word[i][j]);
-            magic[i].key = (d*magic[i].key + hash_num) % q;
+            magic[i].key = (d*magic[i].key % q + hash_num) % q;
             similar[j][i].index = i;       
         }
         origin[i] = magic[i].key;
     }
+
     for (int j = l-1; j >= 0; j--){
         for (int i = 0; i < k; i++){
             similar[j][i].key = magic[i].key;
@@ -134,8 +135,6 @@ int main(){
         }
         if(go){
             for (int j = 0; j < l; j++){
-                if(!go)
-                    break;
                 for (int i = 0; i < k-1; i++){
                     if(!go)
                         break;
