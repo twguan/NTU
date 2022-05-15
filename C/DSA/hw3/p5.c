@@ -6,6 +6,7 @@
 typedef struct node{
     long long key;    // Rabin-Karp value
     int index;
+    char word[1000002];
 }node;
 
 int cmp( const void *a ,const void *b){
@@ -21,17 +22,6 @@ long long comb2(long long n){
         return 0;
     else
         return n*(n-1)/2;
-}
-
-int InList(long long target, long long *list, int len){
-    int go = 0;
-    for (int i = 0; i < len; i++){
-        if (list[i] == target){
-            go = 1;
-            break;
-        }
-    }
-    return go;
 }
 
 int main(){
@@ -50,25 +40,31 @@ int main(){
     long long q = LLONG_MAX / d + 1;
     long long h = 1;
 
-    for (int i = 0; i < l; i++)
-        h *= d;
+
     for (int i = 0; i < k; i++){
         magic[i].index = i;
         magic[i].key = 0;
+        scanf("%s", &magic[i].word);
         for (int j = 0; j < l; j++)
             similar[j][i].key = 0;
         for (int j = 0; j < l; j++){
-            scanf(" %c", &input);
+            char input = magic[i].word[j];
             long long hash_num = hash(input);
             magic[i].key = (d*magic[i].key + hash_num) % q;
-            similar[j][i].index = i;
-            for (int m = 0; m < l; m++)
-                if (j != m)
-                     similar[m][i].key = (d*similar[m][i].key + hash_num) % q;        
+            similar[j][i].index = i;       
         }
         origin[i] = magic[i].key;
     }
-    
+    for (int j = l-1; j >= 0; j--){
+        for (int i = 0; i < k; i++){
+            similar[j][i].key = magic[i].key;
+            similar[j][i].key -= (hash(magic[i].word[j])*h % q);
+        }
+        h *= d;
+        h %= q;
+    }
+
+
     qsort(magic, k, sizeof(node), cmp);
     for (int i = 0; i < l; i++)
         qsort(similar[i], k, sizeof(node), cmp);
