@@ -6,7 +6,6 @@
 typedef struct node{
     long long key;    // Rabin-Karp value
     int index;
-    char word[1000002];
 }node;
 
 int cmp( const void *a ,const void *b){
@@ -33,6 +32,9 @@ int main(){
     node *magic = (node *)malloc(sizeof(node) * k);
     node **similar = (node **)malloc(sizeof(node *) * l);
     long long *origin = (long long*)malloc(sizeof(long long) * k);
+    char **word = (char **)malloc(sizeof(char *) * k);
+    for (int i = 0; i < k; i++)
+        word[i] = (char *)malloc(sizeof(char) * (l+1));
     for (int i = 0; i < l; i++)
         similar[i] = (node *)malloc(sizeof(node) * k);
 
@@ -44,12 +46,11 @@ int main(){
     for (int i = 0; i < k; i++){
         magic[i].index = i;
         magic[i].key = 0;
-        scanf("%s", &magic[i].word);
+        scanf("%s", word[i]);
         for (int j = 0; j < l; j++)
             similar[j][i].key = 0;
         for (int j = 0; j < l; j++){
-            char input = magic[i].word[j];
-            long long hash_num = hash(input);
+            long long hash_num = hash(word[i][j]);
             magic[i].key = (d*magic[i].key + hash_num) % q;
             similar[j][i].index = i;       
         }
@@ -58,7 +59,7 @@ int main(){
     for (int j = l-1; j >= 0; j--){
         for (int i = 0; i < k; i++){
             similar[j][i].key = magic[i].key;
-            similar[j][i].key -= (hash(magic[i].word[j])*h % q);
+            similar[j][i].key -= (hash(word[i][j])*h % q);
         }
         h *= d;
         h %= q;
