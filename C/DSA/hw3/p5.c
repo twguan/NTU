@@ -51,7 +51,7 @@ int main(){
         magic[i].index = i;
         magic[i].key = 0;
         scanf("%s", word[i]);
-        for (int j = 0; j < l; j++)
+        for (int j = 0; j < l; j++) 
             similar[j][i].key = 0;
         for (int j = 0; j < l; j++){
             unsigned long long hash_num = hash(word[i][j]);
@@ -64,7 +64,7 @@ int main(){
     for (int j = l-1; j >= 0; j--){
         for (int i = 0; i < k; i++){
             similar[j][i].key = magic[i].key;
-            similar[j][i].key -= (hash(word[i][j])*h % q);
+            similar[j][i].key += (q - (hash(word[i][j])*h % q));
             similar[j][i].key %= q;
         }
         h *= d;
