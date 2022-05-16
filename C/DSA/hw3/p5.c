@@ -99,7 +99,7 @@ int main(){
         for (int j = 0; j < l; j++){
             ct = 1;
             for (int i = 0; i < k; i++){
-                if (i == k)
+                if (i == k-1)
                     ans += comb2(ct);
                 else if(similar[j][i].key == similar[j][i+1].key)
                     ct++;
@@ -112,7 +112,7 @@ int main(){
         // count # same pairs
         ct = 1;
         for (int i = 0; i < k; i++){
-            if (i == k)
+            if (i == k-1)
                 ans -= comb2(ct)*(l-1);
             else if (magic[i].key == magic[i+1].key){
                 ct++;
