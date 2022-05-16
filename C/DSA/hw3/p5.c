@@ -65,6 +65,7 @@ int main(){
         for (int i = 0; i < k; i++){
             similar[j][i].key = magic[i].key;
             similar[j][i].key -= (hash(word[i][j])*h % q);
+            similar[j][i].key %= q;
         }
         h *= d;
         h %= q;
