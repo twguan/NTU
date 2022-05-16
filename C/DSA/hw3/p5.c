@@ -17,10 +17,10 @@ int cmp( const void *a ,const void *b){
 }
 
 unsigned long long hash(char c){
-    return (long long)(c - ' ');
+    return (unsigned long long)(c - ' ');
 }
 
-unsigned long long comb2(long long n){
+unsigned long long comb2(unsigned long long n){
     if (n < 2)
         return 0;
     else
