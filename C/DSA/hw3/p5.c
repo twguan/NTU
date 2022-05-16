@@ -4,19 +4,23 @@
 #include <limits.h>
 
 typedef struct node{
-    long long key;    // Rabin-Karp value
+    unsigned long long key;    // Rabin-Karp value
     int index;
 }node;
 
 int cmp( const void *a ,const void *b){
-    return (*(node *)a).key >= (*(node *)b).key ? 1 : -1;
+    if ((*(node *)a).key >= (*(node *)b).key)
+        return 1;
+    else
+        return -1;
+    // return (*(node *)a).key >= (*(node *)b).key ? 1 : -1;
 }
 
-long long hash(char c){
+unsigned long long hash(char c){
     return (long long)(c - ' ');
 }
 
-long long comb2(long long n){
+unsigned long long comb2(long long n){
     if (n < 2)
         return 0;
     else
@@ -31,16 +35,16 @@ int main(){
 
     node *magic = (node *)malloc(sizeof(node) * k);
     node **similar = (node **)malloc(sizeof(node *) * l);
-    long long *origin = (long long*)malloc(sizeof(long long) * k);
+    unsigned long long *origin = (unsigned long long*)malloc(sizeof(unsigned long long) * k);
     char **word = (char **)malloc(sizeof(char *) * k);
     for (int i = 0; i < k; i++)
         word[i] = (char *)malloc(sizeof(char) * (l+1));
     for (int i = 0; i < l; i++)
         similar[i] = (node *)malloc(sizeof(node) * k);
 
-    long long d = 0x7E - 0x21 + 1;  // d = 94
-    long long q = LLONG_MAX / d + 1;    // q = 98120979115476339
-    long long h = 1;
+    unsigned long long d = 0x7E - 0x21 + 1;  // d = 94
+    unsigned long long q = ULLONG_MAX / d + 1;    // q = 98120979115476339
+    unsigned long long h = 1;
 
 
     for (int i = 0; i < k; i++){
@@ -50,7 +54,7 @@ int main(){
         for (int j = 0; j < l; j++)
             similar[j][i].key = 0;
         for (int j = 0; j < l; j++){
-            long long hash_num = hash(word[i][j]);
+            unsigned long long hash_num = hash(word[i][j]);
             magic[i].key = (d*magic[i].key % q + hash_num) % q;
             similar[j][i].index = i;       
         }
@@ -87,8 +91,8 @@ int main(){
 
 
     if (flag){  // flag = 1
-        long long ans = 0;
-        long long ct = 1;
+        unsigned long long ans = 0;
+        unsigned long long ct = 1;
 
         // count # similar pairs
         for (int j = 0; j < l; j++){
@@ -96,7 +100,7 @@ int main(){
             for (int i = 0; i < k; i++){
                 if (i == k)
                     ans += comb2(ct);
-                else if(similar[j][i].key == similar[j][i+1].key)   // if they are similar, check if they are the same
+                else if(similar[j][i].key == similar[j][i+1].key)
                     ct++;
                 else{
                     ans += comb2(ct);
@@ -118,7 +122,7 @@ int main(){
             }
         }
         if (ans)
-            printf("Yes\n%lld", ans);
+            printf("Yes\n%llu", ans);
         else
             printf("No");
     }
