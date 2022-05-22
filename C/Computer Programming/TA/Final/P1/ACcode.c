@@ -7,7 +7,7 @@ int main(){
         if (i == n-1)
             printf("^");
         else
-            printf("*");
+            printf(" ");
     }
     printf("\n");
     for (int i = 1; i < n; i++){
@@ -17,7 +17,7 @@ int main(){
             else if (j == n-1+i)
                 printf("\\");
             else
-                printf("*");
+                printf(" ");
         }
         printf("\n");
     }
