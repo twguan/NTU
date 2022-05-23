@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <time.h>
 
 int cmp(const void *a, const void *b){
     char *sa = (char *)a;
@@ -10,9 +9,6 @@ int cmp(const void *a, const void *b){
 }
 
 int main(){
-    // clock_t start, end;
-    // start record the time
-    // start = clock();
 
     char list_name[32];
     char store_name[32];
@@ -61,7 +57,7 @@ int main(){
                 break;
             }
             if (j == num-1)
-                fprintf(note_f, "%s None", list[i]);
+                fprintf(note_f, "%s None\n", list[i]);
         }
     }
 
@@ -70,8 +66,5 @@ int main(){
     fclose(store_f);
     fclose(note_f);
 
-    // end = clock();
-    // double diff = end - start;
-    // printf("\nexecute %.0f ms", diff);
     return 0;
 }
