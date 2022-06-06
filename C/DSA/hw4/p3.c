@@ -3,7 +3,7 @@
 #include <string.h>
 
 long long q = 0;
-long long stack[1000000];
+long long stack[1000000] = {0};
 int ct = 0;
 
 typedef struct save{
@@ -126,7 +126,7 @@ void traverse(Graph *graph ,node *node, save **record, ds **sets){
                 q++;
         }
         else if (record[i]->isMerge == 2)
-            stack[ct++] = q;
+            stack[i] = q;
         node = node->next;
     }
 }
@@ -189,7 +189,9 @@ int main(){
     // printDs(sets, N+1);
     // printGraph(graph);
     traverse(graph, graph->list[0], record, sets);
-    for (int i = ct-1; i >= 0; i--)
-        printf("%d\n", stack[i]);
+    for (int i = 0; i < M+1; i++){
+        if (stack[i])
+            printf("%d\n", stack[i]);
+    }
     return 0;
 }
