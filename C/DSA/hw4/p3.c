@@ -3,8 +3,7 @@
 #include <string.h>
 
 long long q = 0;
-long long stack[1000000] = {0};
-int ct = 0;
+long long stack[1000002];
 
 typedef struct save{
     int isMerge;
@@ -50,34 +49,35 @@ int merge(ds **sets, int ta, int tb, save *save){
         return 0;
 
     else{
+        q--;
+        if (sets[a]->size < sets[b]->size){
+            int temp = a;
+            a = b;
+            b = temp;
+        }
+        sets[b]->parent = sets[a];
+        sets[a]->size += sets[b]->size;
+
+        // return b -> a, a.size += b.size
         save->ta = a;
         save->tb = b;
-        if (sets[a]->size >= sets[b]->size){
-            sets[b]->parent = sets[a];
-            sets[a]->size += sets[b]->size;
-            // return b -> a, a.size += b.size
-        }
-        else {
-            sets[a]->parent = sets[b];
-            sets[b]->size += sets[a]->size;
-            // return a -> b, b.size += a.size
-        }
     }
 }
 
 int reverse(ds **sets, int ta, int tb){
     int a = findSet(sets, ta), b = findSet(sets, tb);
     if (a == b){    //same set
+        q++;
         if (sets[ta]->size >= sets[tb]->size){
             sets[tb]->parent = sets[tb];
             sets[ta]->size -= sets[tb]->size;
             // return b -> a, a.size += b.size
         }
-        else {
-            sets[ta]->parent = sets[ta];
-            sets[tb]->size -= sets[ta]->size;
-            // return a -> b, b.size += a.size
-        }
+        // else {
+        //     sets[ta]->parent = sets[ta];
+        //     sets[tb]->size -= sets[ta]->size;
+        //     // return a -> b, b.size += a.size
+        // }
         return 1;
     }
     else
@@ -116,17 +116,17 @@ void traverse(Graph *graph ,node *node, save **record, ds **sets){
         return;
     while (node){
         int i = node->vertex;
+        // printf("%d ",i);
         if (record[i]->isMerge == 1){    // merge
-            if(merge(sets, record[i]->ta, record[i]->tb, record[i]))
-                q--;
-        }
-        traverse(graph, graph->list[i], record, sets);
-        if (record[i]->isMerge == 1){    // merge
-            if(reverse(sets, record[i]->ta, record[i]->tb))
-                q++;
+            merge(sets, record[i]->ta, record[i]->tb, record[i]);
         }
         else if (record[i]->isMerge == 2)
             stack[i] = q;
+        traverse(graph, graph->list[i], record, sets);
+        if (record[i]->isMerge == 1){    // merge
+            // printf("%d ",i);
+            reverse(sets, record[i]->ta, record[i]->tb);
+        }
         node = node->next;
     }
 }
@@ -136,19 +136,22 @@ void printDs(ds **sets, int n){
         printf("ds %d: p= %d, size= %d\n", i, sets[i]->parent->num, sets[i]->size);
 }
 
-// void printGraph(Graph *graph){
-//     for (int i = 0; i < graph->numVertex; i++){
-//         node *temp = graph->list[i];
-//         printf("vertex %d\n:", i);
-//         while (temp){
-//             printf("%d -> ", temp->vertex);
-//             temp = temp->next;
-//         }
-//         printf("\n");
-//     }
-// }
+void printGraph(Graph *graph){
+    for (int i = 0; i < graph->numVertex; i++){
+        node *temp = graph->list[i];
+        printf("vertex %d\n:", i);
+        while (temp){
+            printf("%d -> ", temp->vertex);
+            temp = temp->next;
+        }
+        printf("\n");
+    }
+}
 
 int main(){
+    for (int i = 0; i < 1000002; i++)
+        stack[i] = 0;
+
     int N, M;
     char order[16];
     scanf("%d%d", &N, &M);
@@ -162,6 +165,8 @@ int main(){
     for (int i = 1; i < M+1; i++){
         record[i] = malloc(sizeof(save));
         record[i]->isMerge = 0;
+        record[i]->ta = 0;
+        record[i]->tb = 0;
     }
 
     for (int i = 0; i < M; i++){
@@ -182,14 +187,15 @@ int main(){
             int a;
             scanf("%d", &a);
             addEdge(graph, a, i+1);
+            record[i+1]->isMerge = 0;
         }
+    // printDs(sets, N+1);
     }
     // for (int i = 1; i < M+1; i++)
     //     printf("%d: M=%d, a:%d b:%d\n", i, record[i]->isMerge, record[i]->ta, record[i]->tb);
-    // printDs(sets, N+1);
     // printGraph(graph);
     traverse(graph, graph->list[0], record, sets);
-    for (int i = 0; i < M+1; i++){
+    for (int i = 0; i < 1000002; i++){
         if (stack[i])
             printf("%d\n", stack[i]);
     }
