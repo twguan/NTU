@@ -50,11 +50,7 @@ class Eve(Pokemon, Moves):
         self.AddMove('QuickAttack',3,'normal')
         self.AddMove('Tackle',2.5,'normal')
         self.AddMove('Dig',6,'ground')
-    def __gt__(self,tar):
-        if self.HpMax > tar.HpMax:
-            return True
-        else:
-            return False
+    
     
     def Attack(self, tar:'Pokemon', moveName: str):
         move = self.GetMove(moveName)

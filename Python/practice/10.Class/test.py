@@ -1,43 +1,50 @@
 import Pokemon
 import Eve
+import Eve2
+import PC
  
-name = input().strip()
-lv = int(input())
-hp = int(input())
-p1 = Pokemon.Pokemon(name,lv,hp)
-p1.ShowInfo()
+eveType = {'no':Pokemon.Pokemon,
+           'normal':Eve.Eve,
+           'water':Eve2.Vaporeon,
+           'electric':Eve2.Jolteon,
+           'fire':Eve2.Flareon,}
  
-name = input().strip()
-lv = int(input())
-hp = int(input())
-p2 = Eve.Eve(name,lv,hp)
-p2.ShowInfo()
+pkm_st = []
+n = int(input())
+for i in range(n):
+    name = input().strip()
+    lv = int(input())
+    hp = int(input())
+    ptype = input()
  
-#Round 1
-p1.Attack(p2)
-p2.Attack(p1)
-#Round 2
-p1.Attack(p2)
-p2.Tackle(p1)
-#Round 3
-p1.Attack(p2)
-p2.Swift(p1)
+    pkm = eveType.get(ptype, Pokemon.Pokemon)(name,lv,hp)
+    #pkm.ShowInfo()
+    pkm_st.append(pkm)
  
-p1.ShowInfo()
-p2.ShowInfo()
+for pkm in pkm_st:
+    mv = input()
+    pkm_st[0].Attack(pkm,mv)
+    pkm.ShowInfo()
  
-#以下為測試是否將成員設成private(non-public)
-private_tester = Pokemon.Pokemon._Pokemon__pkmCt
+pcName = input()
+pc1 = PC.PokemonHealthCenter(pcName)
+pc1 << pkm_st[-1]
+pkm_st[-1].ShowInfo()
+pc1 << pkm_st
  
-#以下為測試是否將成員設成private(non-public)並設定getter
-pst = [p1,p2]
-for p in pst:
-    if p._Pokemon__Name != p.Name: print('Property Error')
-    if p._Pokemon__Lv != p.Lv: print('Property Error')
-    if p._Pokemon__HpCur != p.HpCur: print('Property Error')
-    if p._Pokemon__HpMax != p.HpMax: print('Property Error')
+#Pokemon.__gt__ = PC.myGt #這個寫法不能繼承
+pkm_st.sort()
  
-#不同版本的python自動解構的順序並不一定，手動刪除以維持穩定性
-del pst
-del p1
-del p2
+for pkm in pkm_st:
+    pkm.ShowInfo()
+ 
+#以下為測試成員繼承關系
+if issubclass(Eve2.Vaporeon,Pokemon.Pokemon) == False: print('Class Inheritance Error')
+if issubclass(Eve2.Jolteon,Pokemon.Pokemon) == False: print('Class Inheritance Error')
+if issubclass(Eve2.Flareon,Pokemon.Pokemon) == False: print('Class Inheritance Error')
+if issubclass(Eve2.Vaporeon,Eve.Eve) == False: print('Class Inheritance Error')
+if issubclass(Eve2.Jolteon,Eve.Eve) == False: print('Class Inheritance Error')
+if issubclass(Eve2.Flareon,Eve.Eve) == False: print('Class Inheritance Error')
+ 
+while pkm_st:
+    pkm_st.pop()

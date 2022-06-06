@@ -1,0 +1,47 @@
+Pikachu uses move atk1 to attack Pikachu 10 points.
+Alive Pokemon: 5
+Name: Pikachu
+Lv: 10
+HP: 40/50
+
+Pikachu uses move atk2 to attack MyEve1Vaporeon 10 points.
+Type: 
+Alive Pokemon: 5
+Name: MyEve1Vaporeon
+Lv: 7
+HP: 30/40
+
+Moves: ['Dig', 'HydroPump', 'QuickAttack', 'Tackle', 'WaterGun', 'WaterPulse']
+
+Pikachu uses move atk3 to attack MyEve2Flareon 10 points.
+Type: 
+Alive Pokemon: 5
+Name: MyEve2Flareon
+Lv: 8
+HP: 40/50
+
+Moves: ['Dig', 'Ember', 'FireSpin', 'Flamethrower', 'QuickAttack', 'Tackle']
+
+Pikachu uses move atk4 to attack MyEve3Jolteon 10 points.
+Type: 
+Alive Pokemon: 5
+Name: MyEve3Jolteon
+Lv: 3
+HP: 5/15
+
+Moves: ['Dig', 'QuickAttack', 'Tackle', 'Thunder', 'ThunderShock', 'Thunderbolt']
+
+Pikachu uses move atk5 to attack MyEve4Eve 10 points.
+MyEve4Eve is fainted.
+Alive Pokemon: 5
+Name: MyEve4Eve
+Lv: 2
+HP: 0/8
+
+Moves: ['Dig', 'QuickAttack', 'Tackle']
+
+MyEve3Jolteon has returned to the nature.
+MyEve2Flareon has returned to the nature.
+MyEve1Vaporeon has returned to the nature.
+Pikachu has returned to the nature.
+MyEve4Eve has returned to the nature.
