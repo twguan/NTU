@@ -120,13 +120,13 @@ void traverse(Graph *graph ,node *node, save **record, ds **sets){
             if(merge(sets, record[i]->ta, record[i]->tb, record[i]))
                 q--;
         }
-        else if (record[i]->isMerge == 2)
-            stack[ct++] = q;
         traverse(graph, graph->list[i], record, sets);
         if (record[i]->isMerge == 1){    // merge
             if(reverse(sets, record[i]->ta, record[i]->tb))
                 q++;
         }
+        else if (record[i]->isMerge == 2)
+            stack[ct++] = q;
         node = node->next;
     }
 }
