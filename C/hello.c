@@ -1,9 +1,7 @@
 #include <stdio.h>
 
-
-
 int main(){
-    unsigned int a = 1;
-    printf("%u", a-2);
+    char a[1][10];
+    printf("%d %d", sizeof(char *), sizeof(a[0]));
     return 0;
 }

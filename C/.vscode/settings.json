@@ -5,7 +5,8 @@
         "ctype.h": "c",
         "type_traits": "c",
         "string.h": "c",
-        "math.h": "c"
+        "math.h": "c",
+        "iostream": "cpp"
     },
     "C_Cpp.errorSquiggles": "Disabled",
     "python.defaultInterpreterPath": "C:/Python/Python310/python.exe"
