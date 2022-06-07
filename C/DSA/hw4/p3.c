@@ -61,6 +61,7 @@ int merge(ds **sets, int ta, int tb, save *save){
         // return b -> a, a.size += b.size
         save->ta = a;
         save->tb = b;
+        save->isMerge = 3;
     }
 }
 
@@ -123,8 +124,8 @@ void traverse(Graph *graph ,node *node, save **record, ds **sets){
         else if (record[i]->isMerge == 2)
             stack[i] = q;
         traverse(graph, graph->list[i], record, sets);
-        if (record[i]->isMerge == 1){    // merge
-            // printf("%d ",i);
+        if (record[i]->isMerge == 3){    // merge
+            // printf("%d ",i); 
             reverse(sets, record[i]->ta, record[i]->tb);
         }
         node = node->next;
