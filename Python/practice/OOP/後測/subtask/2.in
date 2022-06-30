@@ -1,0 +1,27 @@
+addBook
+The Old Man and the Sea|Novel Imaginary Ocean|5
+addBook
+Harry Potter and the Sorcerer Stone|Novel Imaginary Realism Fantasy|3
+addBook
+Calculus: Early Transcendentals 8th|Calculus Math|6
+addMember
+Andrew|student
+addMember
+Abei|other
+addMember
+TianGod|teacher
+borrowBook
+Jessica|The Old Man and the Sea
+TianGod|The Old Man and the Sea
+addBook
+Count 123|Children Math|2
+addMember
+Tom|student
+borrowBook
+Tom|Count 123
+findBook
+-|Math
+findBook
+The Old Man and the Sea|-
+libraryInfo
+quit

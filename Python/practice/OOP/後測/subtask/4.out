@@ -1,0 +1,111 @@
+---Add Member---
+You can borrow at most 5 books.
+----------------
+
+---Add Member---
+You can borrow at most 5 books.
+----------------
+
+---Add Member---
+You can borrow at most 5 books.
+----------------
+
+---Add Member---
+You can borrow at most 3 books.
+----------------
+
+---Add Member---
+You can borrow at most 3 books.
+----------------
+
+---Add Member---
+You can borrow at most 3 books.
+----------------
+
+---Add Member---
+You can borrow at most 7 books.
+----------------
+
+---Search Result---
+Dragon Ball 04: 20/20
+-------------------
+
+---Library Info---
+ Object-Oriented Programming In C++: 7/7
+C++ Primer 5th Edition: 8/8
+Dragon Ball 01: 20/20
+Dragon Ball 02: 20/20
+Dragon Ball 03: 20/20
+Dragon Ball 04: 20/20
+Dragon Ball 05: 20/20
+Dragon Ball 06: 20/20
+Dragon Ball 07: 20/20
+Dragon Ball 08: 20/20
+Dragon Ball 09: 20/20
+Dragon Ball 10: 20/20
+Magic Tree House: 3/3
+More Effective C++: 2/2
+Python Crash Course: 4/4
+------------------
+
+---Add Member---
+You can borrow at most 7 books.
+----------------
+
+---Add Member---
+You can borrow at most 7 books.
+----------------
+
+---Search Result---
+-------------------
+
+---Borrow Book---
+['Dragon Ball 01']
+-----------------
+
+---Borrow Book---
+['Dragon Ball 01', 'Dragon Ball 02']
+-----------------
+
+---Library Info---
+ Object-Oriented Programming In C++: 7/7
+C++ Primer 5th Edition: 8/8
+Calculus: Early Transcendentals 8th: 6/6
+Dragon Ball 01: 19/20
+Dragon Ball 02: 19/20
+Dragon Ball 03: 20/20
+Dragon Ball 04: 20/20
+Dragon Ball 05: 20/20
+Dragon Ball 06: 20/20
+Dragon Ball 07: 20/20
+Dragon Ball 08: 20/20
+Dragon Ball 09: 20/20
+Dragon Ball 10: 20/20
+Harry Potter and the Sorcerer Stone: 3/3
+Magic Tree House: 3/3
+More Effective C++: 2/2
+Python Crash Course: 4/4
+The Old Man and the Sea: 5/5
+------------------
+
+---Borrow Book---
+['Dragon Ball 01', 'Dragon Ball 02', 'Dragon Ball 03']
+-----------------
+
+---Borrow Book---
+Sorry! You can not borrow more books!
+-----------------
+
+---Borrow Book---
+Sorry! You can not borrow more books!
+-----------------
+
+---Borrow Book---
+You are not our member!
+-----------------
+
+---Borrow Book---
+['Playboy']
+-----------------
+
+Have a nice day!

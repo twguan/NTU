@@ -1,0 +1,77 @@
+addBook
+C++ Primer 5th Edition|Coding C ComputerScience|8
+addBook
+More Effective C++|Coding C ComputerScience|2
+addBook
+ Object-Oriented Programming In C++|Coding C ComputerScience|7
+addBook
+Python Crash Course|Coding Python ComputerScience|4
+addBook
+Magic Tree House|Children Novel|3
+addBook
+Dragon Ball 01|Comics|20
+addBook
+Dragon Ball 02|Comics|20
+addBook
+Dragon Ball 03|Comics|20
+addBook
+Dragon Ball 04|Comics|20
+addBook
+Dragon Ball 05|Comics|20
+addBook
+Dragon Ball 06|Comics|20
+addMember
+MichaelTsai|teacher
+addMember
+CMKuan|teacher
+addMember
+ProfP|teacher
+addMember
+Nick|other
+addMember
+Ice|other
+addMember
+Mickey|other
+addBook
+Dragon Ball 07|Comics|20
+addMember
+Jack|student
+addBook
+Dragon Ball 08|Comics|20
+addBook
+Dragon Ball 09|Comics|20
+findBook
+Dragon Ball 04|Comics
+addBook
+Dragon Ball 10|Comics|20
+libraryInfo
+addMember
+Joshua|student
+addMember
+Elane|student
+addBook
+The Old Man and the Sea|Novel Imaginary Ocean|5
+findBook
+Get Help|-
+addBook
+Harry Potter and the Sorcerer Stone|Novel Imaginary Realism Fantasy|3
+addBook
+Calculus: Early Transcendentals 8th|Calculus|6
+borrowBook
+Nick|Dragon Ball 01
+borrowBook
+Nick|Dragon Ball 02
+libraryInfo
+borrowBook
+Nick|Dragon Ball 03
+borrowBook
+Nick|Dragon Ball 04
+borrowBook
+Nick|Dragon Ball 05
+addBook
+Playboy|Adult Exposed|1
+borrowBook
+John|Playboy
+borrowBook
+Joshua|Playboy
+quit

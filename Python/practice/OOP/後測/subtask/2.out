@@ -1,0 +1,41 @@
+---Add Member---
+You can borrow at most 7 books.
+----------------
+
+---Add Member---
+You can borrow at most 3 books.
+----------------
+
+---Add Member---
+You can borrow at most 5 books.
+----------------
+
+---Borrow Book---
+You are not our member!
+-----------------
+
+---Add Member---
+You can borrow at most 7 books.
+----------------
+
+---Borrow Book---
+['Count 123']
+-----------------
+
+---Search Result---
+Calculus: Early Transcendentals 8th: 6/6
+Count 123: 1/2
+-------------------
+
+---Search Result---
+The Old Man and the Sea: 5/5
+-------------------
+
+---Library Info---
+Calculus: Early Transcendentals 8th: 6/6
+Count 123: 1/2
+Harry Potter and the Sorcerer Stone: 3/3
+The Old Man and the Sea: 5/5
+------------------
+
+Have a nice day!
