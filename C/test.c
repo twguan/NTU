@@ -1,9 +1,16 @@
-int main(){
-    int x, y;
-    
-for (int col = y-1; col >= 0; col--)
-    for (int row = 0; row = x; row++)
-        printf("%d", map[row][col]);
-    printf("\n");
-    
+void processSetMatrix(int ***ptr) {
+    // ptr[2] == NULL
+    int ***matptr = ptr;
+    while (*matptr){
+        int **setptr = *matptr;
+        while (*setptr){
+            int *num = *setptr;
+            while (*num){
+                printf("%d ", *num);
+                num++;
+            }
+            setptr++;
+        }
+        matptr++;
+    }
 }
