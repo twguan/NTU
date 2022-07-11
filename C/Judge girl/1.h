@@ -1,6 +1,12 @@
-void printBlock(unsigned long long int *block);
-void initialize(unsigned long long int *block, int row, int column, int size);
-int moveLeft(unsigned long long int *block);
-int moveRight(unsigned long long int *block);
-int moveUp(unsigned long long int *block);
-int moveDown(unsigned long long int *block);
+#ifndef _NODE_H
+#define _NODE_H
+ 
+struct node {
+    struct node *left;
+    struct node *right;
+    int data;
+};
+ 
+void print_all_paths(struct node *root);
+ 
+#endif
