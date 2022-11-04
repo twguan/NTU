@@ -1,18 +1,29 @@
 #include <stdio.h>
 #include <string.h>
+#include <math.h>
+int main(void){
+int h,i,j,t,k[10][7];
+char n[10];
+int r=64;
+ 
+gets(n);
+t=strlen(n);
+int a[t];
+for(h=0;h<t;h++){
+  a[h]=n[h];
+}
+//printf("%d",r);
+for(j=0;j<5;j++){
+    r = 64;
+  for(i=7;i>0;i--){	
+    k[j][i]=a[j]/r;
+    a[j]-=k[j][i]*r;
+    r=r/2;
+    printf("%d",k[j][i]);
+  }
+printf(",");}
 
-int main(){
 
-    char string[64] = "abc defg hi123";
-    char c[3][6];
-    const char *s = " ";
-    char *token;
-    token = strtok(string, s);
-    int i = 0;
-    while (token != NULL){
-        strncpy(c[i++], token, strlen(token));
-        token = strtok(NULL, s);
-    }
-    printf("c1:%s c2:%s c3:%s\n", c[0], c[1], c[2]);
-    return 0;
+	// your code goes here
+	return 0;
 }
