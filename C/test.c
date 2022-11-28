@@ -10,9 +10,10 @@ int main(){
     token = strtok(string, s);
     int i = 0;
     while (token != NULL){
-        strncpy(c[i++], token, strlen(token));
+        /* do .... */
+        // strncpy(c[i++], token, strlen(token));
         token = strtok(NULL, s);
     }
-    printf("c1:%s c2:%s c3:%s\n", c[0], c[1], c[2]);
+    // printf("c1:%s c2:%s c3:%s\n", c[0], c[1], c[2]);
     return 0;
 }
