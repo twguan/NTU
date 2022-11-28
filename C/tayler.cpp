@@ -1,51 +1,44 @@
-//PROGRAMMER :王志暐(Zhi-Wei Wang)
-//DATE       :
-//FILENAME   :HW03aB11611021
-//DESCRIPTION:This is a program that 
-
-
-
 #include <iostream>
-#include <math.h>
 using namespace std;
-int answer1, i = 0;
-double r, SinValue;
 
-double TSsin(double r)
+int answer1, answer2, answer3;
+
+class Time
 {
-    double sin = 0, x, f, fac = 1;
-    int t = 2 * i + 1;
-    while (1)
-    {
-        for (f = 1; f <= t; f++)
-        {
-            fac = fac * f;
-        }
-        x = (pow(-1, i)) * (pow(r, t)) / fac;
-        cout << x << endl;
-        cout << sin + x << endl;
-        sin = sin + x;
-        cout << sin << endl;
-        i++;
-        t += 2;
-        if (fabs(sin - SinValue) <= 1e-10)
-        {
-            break;
-        }
-    }
-    return sin;
+public:
+	void setTime();
+	void printTime();
+private:
+	int hour = 1, minute = 1, second = 1;
+};
+
+void Time::setTime()
+{
+	int h, m, s;
+	cout << "Please enter hour (integer between 0-23):";
+	cin >> h;
+	cout << "Please enter minute (integer between 0-59):";
+	cin >> m;
+	cout << "Please enter second (integer between 0-59):";
+	cin >> s;
+	answer1 = h;
+	answer2 = m;
+	answer3 = s;
+    hour = h;
+    minute = m;
+    second = s;
+}
+
+void Time::printTime()
+{
+	cout << "The time is: " << hour << ":" << minute << ":" << second << endl;
 }
 
 int main()
 {
-    cout << "The taylor series approximation of sin(x) and the equation to do so is :" << endl;
-    cout << "sin(x)=sigma(((-1)^n)x^(2n+1)/(2n+1)!)" << endl;
-    cout << "Please input the radius of convergence : ";
-    cin >> r;
-    SinValue = sin(r);
-    TSsin(r);
-    cout << "The value that the absolute difference less than 10^(-10) is: " << TSsin(r) << endl;
-    cout << "The value n is: " << i;
-    answer1 = i;
-    return 0;
+	Time x;
+    x.printTime();
+	x.setTime();
+	x.printTime();
+	return 0;
 }
