@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "chess.h"
 void place_queen(int board[8][8], int x, int y){
     if (board[x][y] == -1 || board[x][y] == 4){
         printf("invalid place\n");
@@ -49,7 +50,7 @@ void place_queen(int board[8][8], int x, int y){
 }
 
 void place_rook(int board[8][8], int x, int y){
-    if (board[x][y] == -1){
+    if (board[x][y] != 0){
         printf("invalid place\n");
         return;
     }
@@ -63,7 +64,7 @@ void place_rook(int board[8][8], int x, int y){
 }
 
 void place_bishop(int board[8][8], int x, int y){
-    if (board[x][y] == -1){
+    if (board[x][y] != 0){
         printf("invalid place\n");
         return;
     }
@@ -81,7 +82,7 @@ void place_bishop(int board[8][8], int x, int y){
 }
 
 void place_knight(int board[8][8], int x, int y){
-    if (board[x][y] == -1){
+    if (board[x][y] != 0){
         printf("invalid place\n");
         return;
     }
@@ -126,5 +127,5 @@ void count_chess(int board[8][8]){
                 k++;
         }
     }
-    printf("#queen:%2d\n#rook:%2d\n#bishop:%2d\n#knight:%2d\n", q, r, b, k);
+    printf("#queen:%2d\n#rook:%2d\n#bishop:%2d\n#knight:%2d\n\n", q, r, b, k);
 }

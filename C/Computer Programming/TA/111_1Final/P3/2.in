@@ -1,0 +1,14 @@
+13
+rook 1 5
+bishop 2 6
+bishop 7 4
+print
+knight 0 0
+print
+knight 4 7
+knight 4 7
+bishop 0 0
+count
+rook 6 2
+count
+print

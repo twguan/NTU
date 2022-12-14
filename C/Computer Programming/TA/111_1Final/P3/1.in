@@ -1,0 +1,7 @@
+6
+rook 3 3
+bishop 4 4
+print
+bishop 2 6
+count
+print

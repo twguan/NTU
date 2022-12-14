@@ -1,0 +1,10 @@
+9
+knight 4 4
+bishop 7 7
+count
+print
+rook 4 4
+queen 4 4
+queen 7 7
+count
+print

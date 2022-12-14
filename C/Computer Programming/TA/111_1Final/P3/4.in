@@ -1,0 +1,32 @@
+31
+knight 5 5
+count
+print
+bishop 5 5
+count
+rook 5 5
+count
+print
+queen 5 5
+count
+print
+bishop 4 3
+count
+print
+rook 4 3
+knight 4 3
+queen 4 3
+count
+print
+rook 0 1
+count
+print
+knight 0 1
+count
+print
+bishop 0 1
+count
+print
+queen 0 1
+count
+print

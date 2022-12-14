@@ -1,0 +1,19 @@
+18
+rook 1 5
+bishop 2 6
+queen 4 6
+count
+bishop 7 4
+print
+knight 0 0
+print
+knight 4 7
+queen 3 2
+count
+knight 4 7
+bishop 0 0
+count
+queen 1 2
+rook 6 2
+count
+print

@@ -1,0 +1,9 @@
+8
+rook 1 2
+rook 3 3
+rook 4 4
+rook 8 8
+count
+rook 4 7
+count
+print
